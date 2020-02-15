@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Account</title>
+</head>
+<body>
+<h3>Welcome, {{ request.session.name }}</h3>
+<a type="button" class="button" href="/home/logout/">Log Out</a><br>
+
+<div>
+	<h4>Create Room</h4>
+	<form name="room_create" action="/chat/create_room/" method="POST">
+		{% csrf_token %}
+		Room No : <input type="number" name="room_no_c" required /><br>
+		<button type="submit">Create</button>
+	</form>
+</div>
+
+<div>
+	<h4>Join Room</h4>
+	<form name="room_join" action="/chat/join_room/" method="POST">
+	{% csrf_token %}
+		Room No : <input type="number" name="room_no_j" required /><br>
+		<button type="submit">Join</button>
+	</form>
+</div>
+
+<div>
+	<h4>Delete Room</h4>
+	<form name="room_delete" action="/chat/delete_room/" method="POST">
+	{% csrf_token %}
+		Room No : <input type="number" name="room_no_d" required /><br>
+		<button type="submit">Delete</button>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+</head>
+<body>
+<div>
+	<h3>Login</h3>
+	<form name='login' action="/home/login/" method="POST">
+		{% csrf_token %}
+		Email : <input type="email" name="email" required /><br>
+		Password : <input type="password" name="password" required /><br>
+		<button type="submit" value="Login">Login</button>
+	</form>
+</div>
+
+<div>
+	<h3>Sign Up</h3>
+	<form name='signup' action="/home/signup/" method="POST">
+		{% csrf_token %}
+		Name : <input type="text" name="name" required /><br>
+		Email : <input type="email" name="email" required /><br>
+		Password : <input type="password" name="password" required /><br>
+		<button type="submit" value="Signup">SignUp</button>
+	</form>
+</div>
+</body>
+</html>
